@@ -31,6 +31,7 @@ export class PersonFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.log('Form Value:', this.personForm.value);
     if (this.personForm.invalid) {
       this.personForm.markAllAsTouched();
       alert('First name and surname are required.');
