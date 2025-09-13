@@ -1,0 +1,19 @@
+<div class="list-container">
+  <h3>All Entries</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Surname</th>
+      <th>Created At</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let person of persons">
+      <td>{{ person.firstName }}</td>
+      <td>{{ person.surname }}</td>
+      <td>{{ person.createdAt | date:'medium' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
