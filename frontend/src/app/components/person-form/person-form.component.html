@@ -1,0 +1,31 @@
+<div class="form-container">
+  <h2>Add New Person</h2>
+  <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text" formControlName="firstName" maxlength="48">
+      <div *ngIf="personForm.get('firstName')?.invalid && personForm.get('firstName')?.touched" class="error">
+        First name is required (max 48 chars).
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="surname">Surname</label>
+      <input id="surname" type="text" formControlName="surname" maxlength="64">
+      <div *ngIf="personForm.get('surname')?.invalid && personForm.get('surname')?.touched" class="error">
+        Surname is required (max 64 chars).
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="gender">Gender</label>
+      <select id="gender" formControlName="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <button type="submit" [disabled]="personForm.invalid">SAVE</button>
+  </form>
+</div>
